@@ -55,7 +55,6 @@ class Face:
         self.container_image = None
         self.embedding = None
 
-
 class Recognition:
     def __init__(self):
         self.detect = Detection()
@@ -79,7 +78,15 @@ class Recognition:
                 cv2.imshow("Face: " + str(i), face.image)
             face.embedding = self.encoder.generate_embedding(face)
             face.name = self.identifier.identify(face)
+        return faces
 
+    def embedding(self, image):
+        faces = self.detect.find_faces(image)
+
+        for i, face in enumerate(faces):
+            if debug:
+                cv2.imshow("Face: " + str(i), face.image)
+            face.embedding = self.encoder.generate_embedding(face)
         return faces
 
 
