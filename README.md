@@ -53,3 +53,15 @@ A couple of pretrained models are provided. They are trained using softmax loss 
 
 ## Performance
 The accuracy on LFW for the model [20180402-114759](https://drive.google.com/open?id=1EXPBSXwTaqrSC0OhUdXNmKSh9qJUQ55-) is 0.99650+-0.00252. A description of how to run the test can be found on the page [Validate on LFW](https://github.com/davidsandberg/facenet/wiki/Validate-on-lfw). Note that the input images to the model need to be standardized using fixed image standardization (use the option `--use_fixed_image_standardization` when running e.g. `validate_on_lfw.py`).
+
+### RunCode
+## Build own classifier
+python3 src/classifier.py TRAIN dataset/ 20180408-102900/20180408-102900.pb my_classifier_1.pkl
+
+
+## Run Real-time face recognition
+python3 contributed/real_time_face_recognition.py 
+
+
+
+
